@@ -10,6 +10,7 @@ import UIcon from "../assets/user-icon.svg";
 import YESIcon from "../assets/yes.svg";
 import NOIcon from "../assets/no.svg";
 import SENDIcon from "../assets/send-icon.svg";
+import FILEIcon from "../assets/file-icon.svg";
 
 import { Link } from "react-router-dom";
 
@@ -243,27 +244,33 @@ const Chat = () => {
             </p>
 
             <div className="feedback_btn_wrapper flex justify-center gap-3">
-              <button className="flex items-center border border-[#B3B3B3] py-1 px-2 rounded-full">
+              <button className="flex gap-2 items-center border border-[#B3B3B3] py-1 px-2 rounded-full">
                 <img src={YESIcon} alt="icon" />
                 Yes
               </button>
-              <button className="flex items-center border border-[#B3B3B3] py-1 px-2 rounded-full">
+              <button className="flex gap-2 items-center border border-[#B3B3B3] py-1 px-2 rounded-full">
                 <img src={NOIcon} alt="icon" />
                 No
               </button>
             </div>
           </div>
 
-          <div className="input_form relative">
-            <input
-              className="w-full h-[65px] border border-[#B3B3B3] py-5 px-[30px] rounded-full outline-none"
-              type="text"
-              placeholder="Ask anything..."
-            />
+          <div className="input_from_wrapper fixed bottom-[40px] w-[73%]">
+            <div className="input_form relative">
+              <input
+                className="w-full h-[65px] border border-[#B3B3B3] py-5 px-[30px] rounded-full outline-none"
+                type="text"
+                placeholder="Ask anything..."
+              />
 
-            <button className="absolute top-0 right-0">
-              <img src={SENDIcon} alt="icon" />
-            </button>
+              <button className="absolute top-[50%] translate-y-[-50%] right-[12px]">
+                <img src={SENDIcon} alt="icon" />
+              </button>
+
+              <button className="absolute top-[50%] translate-y-[-50%] right-[70px]">
+                <img src={FILEIcon} alt="icon" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
