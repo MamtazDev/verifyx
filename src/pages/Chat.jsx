@@ -10,84 +10,80 @@ import UIcon from "../assets/user-icon.svg";
 import YESIcon from "../assets/yes.svg";
 import NOIcon from "../assets/no.svg";
 import SENDIcon from "../assets/send-icon.svg";
+import logout from "../assets/logout.png";
 
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Chat = () => {
+  const [display, setDisplay] = useState(false);
+  const [showLogout, setShowLogout] = useState(false);
+
+  const history = [
+    "Is my contract fair?",
+    "Was 9/11 real?",
+    "How old is Joe Biden?",
+    "When will BTC ETF come out?",
+    "New Search",
+    "New Search",
+    "New Search",
+    "New Search",
+    "New Search",
+  ];
   return (
-    <section className="chat_layout">
-      <div className="grid grid-cols-12 gap-10">
-        <div className="col-span-3">
+    <section className="chat_layout ">
+      <div className="lg:grid grid-cols-12 ">
+        <div
+          className={`${
+            display ? "fixed " : "hidden lg:block lg:static"
+          }" col-span-12 lg:col-span-3  z-50 "`}
+        >
           <div className="left_side h-screen">
             <div className="top_bar flex items-center justify-between mb-10">
-              <button>
+              <button onClick={() => setDisplay(false)}>
                 <img src={LArrow} alt="icon" />
               </button>
               <div className="brand_nav">
                 <img src={sLogo} alt="icon" />
               </div>
-              <button>
+              <button onClick={() => setShowLogout(!showLogout)}>
                 <img src={UIcon} alt="icon" />
               </button>
             </div>
+            {showLogout && (
+              <button className="fixed right-0 top-16">
+                <img src={logout} alt="" />
+              </button>
+            )}
 
             <div className="search_history">
               <div className="recent">
                 <div className="title text-center mb-[21px]">
-                  <p className="text-xl font-normal text-white border border-white rounded-[21px] shadow-shadowOne py-1 px-4 inline-block">
+                  <p className="text-xl font-normal text-white border border-white rounded-[21px] shadow-shadowOne py-0 lg:py-1 px-4 inline-block">
                     Today
                   </p>
                 </div>
-                <div className="message_wrapper flex items-center justify-between mb-[30px]">
-                  <div className="message_title flex gap-2 items-center">
-                    <img src={MIcon} alt="icon" />
-                    <p className="text-xl text-white font-normal cursor-pointer">
-                      Is my contract fair?
-                    </p>
+                {history.slice(0, 3).map((data, index) => (
+                  <div
+                    key={index}
+                    className="message_wrapper flex items-center justify-between mb-[23px] lg:mb-[30px]"
+                  >
+                    <div className="message_title flex gap-2 items-center">
+                      <img src={MIcon} alt="icon" />
+                      <p className="text-xl text-white font-normal cursor-pointer">
+                        {data}
+                      </p>
+                    </div>
+                    <div className="message_action flex items-center gap-5">
+                      <button>
+                        <img src={EIcon} alt="icon" />
+                      </button>
+                      <button>
+                        <img src={DIcon} alt="icon" />
+                      </button>
+                    </div>
                   </div>
-                  <div className="message_action flex items-center gap-5">
-                    <button>
-                      <img src={EIcon} alt="icon" />
-                    </button>
-                    <button>
-                      <img src={DIcon} alt="icon" />
-                    </button>
-                  </div>
-                </div>
-
-                <div className="message_wrapper flex items-center justify-between mb-[30px]">
-                  <div className="message_title flex gap-2 items-center">
-                    <img src={MIcon} alt="icon" />
-                    <p className="text-xl text-white font-normal cursor-pointer">
-                      Was 9/11 real?
-                    </p>
-                  </div>
-                  <div className="message_action flex items-center gap-5">
-                    <button>
-                      <img src={EIcon} alt="icon" />
-                    </button>
-                    <button>
-                      <img src={DIcon} alt="icon" />
-                    </button>
-                  </div>
-                </div>
-
-                <div className="message_wrapper flex items-center justify-between mb-[30px]">
-                  <div className="message_title flex gap-2 items-center">
-                    <img src={MIcon} alt="icon" />
-                    <p className="text-xl text-white font-normal cursor-pointer">
-                      How old is Joe Biden?
-                    </p>
-                  </div>
-                  <div className="message_action flex items-center gap-5">
-                    <button>
-                      <img src={EIcon} alt="icon" />
-                    </button>
-                    <button>
-                      <img src={DIcon} alt="icon" />
-                    </button>
-                  </div>
-                </div>
+                ))}
               </div>
 
               <div className="last_month">
@@ -96,56 +92,27 @@ const Chat = () => {
                     May
                   </p>
                 </div>
-                <div className="message_wrapper flex items-center justify-between mb-[30px]">
-                  <div className="message_title flex gap-2 items-center">
-                    <img src={MIcon} alt="icon" />
-                    <p className="text-xl text-white font-normal cursor-pointer">
-                      When will BTC ETF come out?
-                    </p>
+                {history.slice(3, 6).map((data, index) => (
+                  <div
+                    key={index}
+                    className="message_wrapper flex items-center justify-between mb-[23px] lg:mb-[30px]"
+                  >
+                    <div className="message_title flex gap-2 items-center">
+                      <img src={MIcon} alt="icon" />
+                      <p className="text-xl text-white font-normal cursor-pointer">
+                        {data}
+                      </p>
+                    </div>
+                    <div className="message_action flex items-center gap-5">
+                      <button>
+                        <img src={EIcon} alt="icon" />
+                      </button>
+                      <button>
+                        <img src={DIcon} alt="icon" />
+                      </button>
+                    </div>
                   </div>
-                  <div className="message_action flex items-center gap-5">
-                    <button>
-                      <img src={EIcon} alt="icon" />
-                    </button>
-                    <button>
-                      <img src={DIcon} alt="icon" />
-                    </button>
-                  </div>
-                </div>
-
-                <div className="message_wrapper flex items-center justify-between mb-[30px]">
-                  <div className="message_title flex gap-2 items-center">
-                    <img src={MIcon} alt="icon" />
-                    <p className="text-xl text-white font-normal cursor-pointer">
-                      New Search
-                    </p>
-                  </div>
-                  <div className="message_action flex items-center gap-5">
-                    <button>
-                      <img src={EIcon} alt="icon" />
-                    </button>
-                    <button>
-                      <img src={DIcon} alt="icon" />
-                    </button>
-                  </div>
-                </div>
-
-                <div className="message_wrapper flex items-center justify-between mb-[30px]">
-                  <div className="message_title flex gap-2 items-center">
-                    <img src={MIcon} alt="icon" />
-                    <p className="text-xl text-white font-normal cursor-pointer">
-                      New Search
-                    </p>
-                  </div>
-                  <div className="message_action flex items-center gap-5">
-                    <button>
-                      <img src={EIcon} alt="icon" />
-                    </button>
-                    <button>
-                      <img src={DIcon} alt="icon" />
-                    </button>
-                  </div>
-                </div>
+                ))}
               </div>
 
               <div className="last_month">
@@ -154,22 +121,27 @@ const Chat = () => {
                     April
                   </p>
                 </div>
-                <div className="message_wrapper flex items-center justify-between mb-[30px]">
-                  <div className="message_title flex gap-2 items-center">
-                    <img src={MIcon} alt="icon" />
-                    <p className="text-xl text-white font-normal cursor-pointer">
-                      New Search
-                    </p>
+                {history.slice(6, 7).map((data, index) => (
+                  <div
+                    key={index}
+                    className="message_wrapper flex items-center justify-between mb-[23px] lg:mb-[30px]"
+                  >
+                    <div className="message_title flex gap-2 items-center">
+                      <img src={MIcon} alt="icon" />
+                      <p className="text-xl text-white font-normal cursor-pointer">
+                        {data}
+                      </p>
+                    </div>
+                    <div className="message_action flex items-center gap-5">
+                      <button>
+                        <img src={EIcon} alt="icon" />
+                      </button>
+                      <button>
+                        <img src={DIcon} alt="icon" />
+                      </button>
+                    </div>
                   </div>
-                  <div className="message_action flex items-center gap-5">
-                    <button>
-                      <img src={EIcon} alt="icon" />
-                    </button>
-                    <button>
-                      <img src={DIcon} alt="icon" />
-                    </button>
-                  </div>
-                </div>
+                ))}
               </div>
 
               <div className="load_more text-center border-b border-b-[#D9D9D9] pb-2 mb-[35px]">
@@ -188,7 +160,16 @@ const Chat = () => {
           </div>
         </div>
 
-        <div className="col-span-9">
+        <div className="col-span-12 lg:col-span-9 p-5 ">
+          <div className="lg:hidden left_side top_bar flex items-center justify-between mb-10">
+            <button onClick={() => setDisplay(true)}>
+              <img src={LArrow} alt="icon" />
+            </button>
+            <div className="brand_nav">
+              <img src={sLogo} alt="icon" />
+            </div>
+          </div>
+
           <div className="chat_his my-3 text-center">
             <p className="inline-block px-4 py-1 text-xl font-normal text-white shadow-shadowOne">
               Today
@@ -237,17 +218,17 @@ const Chat = () => {
             </div>
           </div>
 
-          <div className="feedback text-center border-t border-t-black">
+          <div className="feedback text-center border-t border-t-black mb-5">
             <p className="text-[22px] font-normal text-[#505050] pt-4 mb-4">
               Is the given answer accurate?
             </p>
 
             <div className="feedback_btn_wrapper flex justify-center gap-3">
-              <button className="flex items-center border border-[#B3B3B3] py-1 px-2 rounded-full">
+              <button className="flex gap-1 items-center border border-[#B3B3B3] py-1 px-2 rounded-full">
                 <img src={YESIcon} alt="icon" />
                 Yes
               </button>
-              <button className="flex items-center border border-[#B3B3B3] py-1 px-2 rounded-full">
+              <button className="flex gap-1 items-center border border-[#B3B3B3] py-1 px-2 rounded-full">
                 <img src={NOIcon} alt="icon" />
                 No
               </button>
@@ -261,7 +242,7 @@ const Chat = () => {
               placeholder="Ask anything..."
             />
 
-            <button className="absolute top-0 right-0">
+            <button className="absolute top-[50%] translate-y-[-50%] right-[20px]">
               <img src={SENDIcon} alt="icon" />
             </button>
           </div>
