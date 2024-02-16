@@ -12,7 +12,7 @@ const Login = () => {
         {/* title -/ end */}
 
         {/* input form */}
-        <div className="form_wrapper w-[370px] mx-auto">
+        <div className="form_wrapper max-w-[370px] w-full mx-auto">
           <div className="input_form mb-[42px] lg:mb-[28px]">
             {/* email */}
             <div className="email_input mb-5 lg:mb-0">
