@@ -11,6 +11,7 @@ import YESIcon from "../assets/yes.svg";
 import NOIcon from "../assets/no.svg";
 import SENDIcon from "../assets/send-icon.svg";
 import logout from "../assets/logout.png";
+import FILEIcon from "../assets/file-icon.svg";
 
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -161,7 +162,7 @@ const Chat = () => {
         </div>
 
         <div className="col-span-12 lg:col-span-9 p-5 ">
-          <div className="lg:hidden left_side top_bar flex items-center justify-between mb-10">
+          <div className="lg:hidden  h-[92px] left_side top_bar flex items-center justify-between  mb-[17px]">
             <button onClick={() => setDisplay(true)}>
               <img src={LArrow} alt="icon" />
             </button>
@@ -169,82 +170,91 @@ const Chat = () => {
               <img src={sLogo} alt="icon" />
             </div>
           </div>
+          <div className="chat_body">
+            <div className="chat_his my-3 text-center">
+              <p className="inline-block px-4 py-1 text-base lg:text-xl font-normal text-white shadow-shadowOne">
+                Today
+              </p>
+            </div>
 
-          <div className="chat_his my-3 text-center">
-            <p className="inline-block px-4 py-1 text-xl font-normal text-white shadow-shadowOne">
-              Today
-            </p>
-          </div>
-
-          <div className="chat_one">
-            <p className="chat_item inline-block py-1 max-w-[470px] w-full px-[30px] font-medium text-white text-lg">
-              to Thailand. What is the best route and <br /> what visas do I
-              need? Is it through india <br /> or no?
-            </p>
-            <span className="time block text-base text-[#B5B5B5] ml-8 mt-2">
-              08:55
-            </span>
-          </div>
-
-          <div className="chat_two flex justify-end mb-10">
-            <div className="chat_item inline-block py-1 max-w-[665px] w-full px-[30px] font-medium text-black text-lg">
-              Actually the best route is a direct flight from Frankfurt to
-              Thailand. <br /> <br /> It is the fastest and the cheapest option
-              that won’t require any extra transit visas.
-              <span className="pb-5 block text-[#0AB6FF] cursor-pointer">
-                {" "}
-                read more....
+            <div className="chat_one hidden lg:block">
+              <p className="chat_item inline-block py-1 max-w-[470px] w-full px-[30px] font-medium text-white text-lg">
+                to Thailand. What is the best route and <br /> what visas do I
+                need? Is it through india <br /> or no?
+              </p>
+              <span className="time block text-base text-[#B5B5B5] ml-8 my-2">
+                08:55
               </span>
             </div>
-          </div>
 
-          <div className="chat_two flex flex-col items-end mb-[80px] relative">
-            <div className="chat_item inline-block py-1 max-w-[560px] w-full px-[30px] font-medium text-black text-lg">
-              Here are some flight companies offering that:
-              <p className="text-lg font-medium text-[#0AB6FF] flex items-center gap-3 mb-3">
-                <img src={THIcon} alt="icon" />
-                <Link to={"#"}>Chaeck for flights</Link>
+            <div className="chat_two flex justify-end mb-10">
+              <div className="chat_item inline-block py-1 max-w-[665px] w-full px-[30px] font-medium text-black text-lg">
+                Actually the best route is a direct flight from Frankfurt to
+                Thailand. <br /> <br /> It is the fastest and the cheapest
+                option that won’t require any extra transit visas.
+                <span className="pb-5 block text-[#0AB6FF] cursor-pointer">
+                  {" "}
+                  read more....
+                </span>
+              </div>
+            </div>
+
+            <div className="chat_two flex flex-col items-end mb-[80px] relative">
+              <div className="chat_item inline-block py-1 max-w-[560px] w-full px-[30px] font-medium text-black text-lg">
+                Here are some flight companies offering that:
+                <p className="text-lg font-medium text-[#0AB6FF] flex items-center gap-3 mb-3">
+                  <img src={THIcon} alt="icon" />
+                  <Link to={"#"}>Chaeck for flights</Link>
+                </p>
+                <p className="text-lg font-medium text-[#0AB6FF] flex items-center gap-3 mb-3">
+                  <img src={QAIcon} alt="icon" />
+                  <Link to={"#"}>Chaeck for flights</Link>
+                </p>
+                <span className="pb-5 block text-[#0AB6FF] cursor-pointer">
+                  show more....
+                </span>
+              </div>
+              <div className="flex flex-col justify-start absolute bottom-[-30px] right-[485px]">
+                <span className="time block text-base text-[#B5B5B5]">
+                  08:55
+                </span>
+              </div>
+            </div>
+
+            <div className="feedback text-center border-t border-t-black mb-5">
+              <p className="text-[22px] font-normal text-[#505050] pt-4 mb-4">
+                Is the given answer accurate?
               </p>
-              <p className="text-lg font-medium text-[#0AB6FF] flex items-center gap-3 mb-3">
-                <img src={QAIcon} alt="icon" />
-                <Link to={"#"}>Chaeck for flights</Link>
-              </p>
-              <span className="pb-5 block text-[#0AB6FF] cursor-pointer">
-                show more....
-              </span>
-            </div>
-            <div className="flex flex-col justify-start absolute bottom-[-30px] right-[485px]">
-              <span className="time block text-base text-[#B5B5B5]">08:55</span>
-            </div>
-          </div>
 
-          <div className="feedback text-center border-t border-t-black mb-5">
-            <p className="text-[22px] font-normal text-[#505050] pt-4 mb-4">
-              Is the given answer accurate?
-            </p>
-
-            <div className="feedback_btn_wrapper flex justify-center gap-3">
-              <button className="flex gap-1 items-center border border-[#B3B3B3] py-1 px-2 rounded-full">
-                <img src={YESIcon} alt="icon" />
-                Yes
-              </button>
-              <button className="flex gap-1 items-center border border-[#B3B3B3] py-1 px-2 rounded-full">
-                <img src={NOIcon} alt="icon" />
-                No
-              </button>
+              <div className="feedback_btn_wrapper flex justify-center gap-3">
+                <button className="flex gap-2 items-center border border-[#B3B3B3] py-1 px-2 rounded-full">
+                  <img src={YESIcon} alt="icon" />
+                  Yes
+                </button>
+                <button className="flex gap-2 items-center border border-[#B3B3B3] py-1 px-2 rounded-full">
+                  <img src={NOIcon} alt="icon" />
+                  No
+                </button>
+              </div>
             </div>
           </div>
 
-          <div className="input_form relative">
-            <input
-              className="w-full h-[65px] border border-[#B3B3B3] py-5 px-[30px] rounded-full outline-none"
-              type="text"
-              placeholder="Ask anything..."
-            />
+          <div className="input_from_wrapper static lg:fixed bottom-[40px] w-full lg:w-[73%]">
+            <div className="input_form relative ">
+              <input
+                className="w-full pr-[120px] h-[65px] border border-[#B3B3B3]  px-[30px] rounded-full outline-none"
+                type="text"
+                placeholder="Ask anything..."
+              />
 
-            <button className="absolute top-[50%] translate-y-[-50%] right-[20px]">
-              <img src={SENDIcon} alt="icon" />
-            </button>
+              <button className="absolute top-[50%] translate-y-[-50%] right-[12px]">
+                <img src={SENDIcon} alt="icon" />
+              </button>
+
+              <button className="absolute top-[50%] translate-y-[-50%] right-[70px]">
+                <img src={FILEIcon} alt="icon" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
