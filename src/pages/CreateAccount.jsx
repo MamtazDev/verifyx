@@ -48,10 +48,11 @@ const CreateAccount = () => {
             </div>
             {/* password -/end */}
           </div>
-
-          <button className="py-[20px] w-full border-2 border-[#86A5FF] rounded-[25px] text-lg text-white font-medium shadow-shadowOne mb-[20px] lg:mb-[13px]">
-            Sign Up
-          </button>
+          <Link to="/chat">
+            <button className="py-[20px] w-full border-2 border-[#86A5FF] rounded-[25px] text-lg text-white font-medium shadow-shadowOne mb-[20px] lg:mb-[13px]">
+              Sign Up
+            </button>
+          </Link>
 
           <div className="text-center mb-[22px] lg:mb-[11px]">
             <Link

@@ -49,9 +49,11 @@ const Login = () => {
             {/* password -/end */}
           </div>
 
-          <button className="py-[20px] w-full border-2 border-[#86A5FF] rounded-[25px] text-lg text-white font-medium shadow-shadowOne mb-5 lg:mb-[13px]">
-            Log In
-          </button>
+          <Link to="/chat">
+            <button className="py-[20px] w-full border-2 border-[#86A5FF] rounded-[25px] text-lg text-white font-medium shadow-shadowOne mb-5 lg:mb-[13px]">
+              Log In
+            </button>
+          </Link>
 
           <div className="text-center mb-5 lg:mb-[11px]">
             <Link
