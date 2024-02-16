@@ -21,7 +21,10 @@ const Home = () => {
           >
             Sign up
           </Link>
-          <Link className="inline-block w-full lg:w-[288px] py-[21px] lg:py-[18px] shadow-shadowOne text-center text-lg font-medium rounded-[25px] border border-[#4171FC] text-[#4171FC]">
+          <Link
+            to="/login"
+            className="inline-block w-full lg:w-[288px] py-[21px] lg:py-[18px] shadow-shadowOne text-center text-lg font-medium rounded-[25px] border border-[#4171FC] text-[#4171FC]"
+          >
             Login
           </Link>
         </div>
