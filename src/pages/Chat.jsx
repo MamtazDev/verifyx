@@ -39,7 +39,7 @@ const Chat = () => {
             display ? "fixed " : "hidden lg:block lg:static"
           }" col-span-12 lg:col-span-3  z-50 "`}
         >
-          <div className="left_side h-screen">
+          <div className="left_side h-auto lg:h-screen">
             <div className="top_bar flex items-center justify-between mb-10">
               <button onClick={() => setDisplay(false)}>
                 <img src={LArrow} alt="icon" />
