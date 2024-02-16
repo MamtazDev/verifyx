@@ -13,12 +13,13 @@ const Login = () => {
 
         {/* input form */}
         <div className="form_wrapper w-[370px] mx-auto">
-          <div className="input_form mb-[28px]">
+          <div className="input_form mb-[42px] lg:mb-[28px]">
             {/* email */}
-            <div className="email_input">
+            <div className="email_input mb-5 lg:mb-0">
               <label
                 htmlFor="email"
-                className="block text-lg font-medium text-white">
+                className="block text-lg font-medium text-white"
+              >
                 Email address
               </label>
               <input
@@ -34,7 +35,8 @@ const Login = () => {
             <div className="password_input">
               <label
                 htmlFor="password"
-                className="block text-lg font-medium text-white">
+                className="block text-lg font-medium text-white"
+              >
                 Password
               </label>
               <input
@@ -47,14 +49,15 @@ const Login = () => {
             {/* password -/end */}
           </div>
 
-          <button className="py-[20px] w-full border-2 border-[#86A5FF] rounded-[25px] text-lg text-white font-medium shadow-shadowOne mb-[13px]">
+          <button className="py-[20px] w-full border-2 border-[#86A5FF] rounded-[25px] text-lg text-white font-medium shadow-shadowOne mb-5 lg:mb-[13px]">
             Log In
           </button>
 
-          <div className="text-center mb-[11px]">
+          <div className="text-center mb-5 lg:mb-[11px]">
             <Link
               to={"/create-account"}
-              className="text-base font-medium text-[#F1F9FF]">
+              className="text-lg lg:text-base font-medium text-[#F1F9FF]"
+            >
               Create account...
             </Link>
           </div>
@@ -67,21 +70,21 @@ const Login = () => {
           </div>
 
           <div className="others_login">
-            <button className="p-[26px] w-full border-2 border-white rounded-[25px] text-lg text-white font-medium shadow-shadowOne mb-[20px]">
+            <button className="h-[70px] pl-[26px] w-full border-2 border-white rounded-[25px] text-lg text-white font-medium shadow-shadowOne mb-[20px]">
               <span className="flex items-center gap-4">
                 <img src={Gimg} alt="icon" />
                 Continue with Google
               </span>
             </button>
 
-            <button className="p-[26px] w-full border-2 border-white rounded-[25px] text-lg text-white font-medium shadow-shadowOne mb-[20px]">
+            <button className="h-[70px] pl-[26px] w-full border-2 border-white rounded-[25px] text-lg text-white font-medium shadow-shadowOne mb-[20px]">
               <span className="flex items-center gap-4">
                 <img src={Mimg} alt="icon" />
                 Continue with Google
               </span>
             </button>
 
-            <button className="p-[26px] w-full border-2 border-white rounded-[25px] text-lg text-[#585757] font-medium shadow-shadowOne mb-[20px]">
+            <button className="h-[70px] pl-[26px] w-full border-2 border-white rounded-[25px] text-lg text-[#585757] font-medium shadow-shadowOne mb-[20px]">
               <span className="flex items-center gap-4">
                 <img src={Aimg} alt="icon" />
                 Continue with Google

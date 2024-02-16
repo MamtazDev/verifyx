@@ -5,7 +5,7 @@
 
 @layer components {
     .title-style {
-        @apply text-[65px] font-semibold text-white get_started text-center mb-[33px];
+        @apply text-[40px] lg:text-[65px] font-semibold get_started text-center mb-[38px] lg:mb-[33px];
     }
 }
 
