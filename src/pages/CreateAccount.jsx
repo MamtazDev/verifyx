@@ -18,7 +18,7 @@ const CreateAccount = () => {
             <div className="email_input mb-5 lg:mb-0">
               <label
                 htmlFor="email"
-                className="block text-lg font-medium text-white"
+                className="block text-lg font-medium text-white ml-5"
               >
                 Email address
               </label>
@@ -35,7 +35,7 @@ const CreateAccount = () => {
             <div className="password_input">
               <label
                 htmlFor="password"
-                className="block text-lg font-medium text-white"
+                className="block text-lg font-medium text-white ml-5"
               >
                 Password
               </label>

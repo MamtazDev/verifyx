@@ -1,20 +1,20 @@
 import ADIcon from "../assets/add-icon.svg";
 import DIcon from "../assets/delete-icon.svg";
 import EIcon from "../assets/edit-icon.svg";
+import FILEIcon from "../assets/file-icon.svg";
 import LArrow from "../assets/left-arrow.svg";
 import sLogo from "../assets/logo-big.png";
+import logout from "../assets/logout.png";
+import NOIcon from "../assets/no.svg";
+import QAIcon from "../assets/qatar.png";
+import SENDIcon from "../assets/send-icon.svg";
 import MIcon from "../assets/text-icon.svg";
 import THIcon from "../assets/thai.png";
-import QAIcon from "../assets/qatar.png";
 import UIcon from "../assets/user-icon.svg";
 import YESIcon from "../assets/yes.svg";
-import NOIcon from "../assets/no.svg";
-import SENDIcon from "../assets/send-icon.svg";
-import logout from "../assets/logout.png";
-import FILEIcon from "../assets/file-icon.svg";
 
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Chat = () => {
   const [display, setDisplay] = useState(false);
@@ -37,8 +37,7 @@ const Chat = () => {
         <div
           className={`${
             display ? "fixed " : "hidden lg:block lg:static"
-          }" col-span-12 lg:col-span-3  z-50 "`}
-        >
+          }" col-span-12 lg:col-span-3  z-50 "`}>
           <div className="left_side h-auto lg:h-screen">
             <div className="top_bar flex items-center justify-between mb-10">
               <button onClick={() => setDisplay(false)}>
@@ -67,8 +66,7 @@ const Chat = () => {
                 {history.slice(0, 3).map((data, index) => (
                   <div
                     key={index}
-                    className="message_wrapper flex items-center justify-between mb-[23px] lg:mb-[30px]"
-                  >
+                    className="message_wrapper flex items-center justify-between mb-[23px] lg:mb-[30px]">
                     <div className="message_title flex gap-2 items-center">
                       <img src={MIcon} alt="icon" />
                       <p className="text-xl text-white font-normal cursor-pointer">
@@ -96,8 +94,7 @@ const Chat = () => {
                 {history.slice(3, 6).map((data, index) => (
                   <div
                     key={index}
-                    className="message_wrapper flex items-center justify-between mb-[23px] lg:mb-[30px]"
-                  >
+                    className="message_wrapper flex items-center justify-between mb-[23px] lg:mb-[30px]">
                     <div className="message_title flex gap-2 items-center">
                       <img src={MIcon} alt="icon" />
                       <p className="text-xl text-white font-normal cursor-pointer">
@@ -125,8 +122,7 @@ const Chat = () => {
                 {history.slice(6, 7).map((data, index) => (
                   <div
                     key={index}
-                    className="message_wrapper flex items-center justify-between mb-[23px] lg:mb-[30px]"
-                  >
+                    className="message_wrapper flex items-center justify-between mb-[23px] lg:mb-[30px]">
                     <div className="message_title flex gap-2 items-center">
                       <img src={MIcon} alt="icon" />
                       <p className="text-xl text-white font-normal cursor-pointer">
@@ -145,7 +141,7 @@ const Chat = () => {
                 ))}
               </div>
 
-              <div className="load_more text-center border-b border-b-[#D9D9D9] pb-2 mb-[35px]">
+              <div className="load_more text-center border-t border-t-[#D9D9D9] pt-2 mb-[35px]">
                 <button className="text-lg font-medium text-center text-[#ffffffc9]">
                   Load more....
                 </button>
@@ -178,12 +174,31 @@ const Chat = () => {
               </p>
             </div>
 
-            <div className="chat_one hidden lg:block">
-              <p className="chat_item inline-block py-1 max-w-[470px] w-full px-[30px] font-medium text-white text-lg">
+            <div className="chat_minus_one">
+              <p className="chat_item inline-block py-1 max-w-[248px] w-full px-[30px] font-medium text-white text-lg bg-white">
+                Hello, how may I help <br /> You today?
+              </p>
+              <span className="time block text-base text-[#B5B5B5] ml-8 my-2">
+                08:55
+              </span>
+            </div>
+
+            <div className="chat_one flex lg:flex-none flex-col items-end">
+              <p className="chat_item inline-block py-4 max-w-[285px] lg:max-w-[470px] w-full px-[30px] font-medium text-white text-lg">
+                I’ve seen news on a <br /> Project called Solidus Ai <br /> getting a 100
+                million <br /> dollar deal with <br /> Microsoft, is that true? to Thailand.
+              </p>
+              <span className="time block text-base text-[#B5B5B5] ml-8 my-2 mr-8 md:mr-0">
+                08:55
+              </span>
+            </div>
+
+            <div className="chat_one flex lg:flex-none flex-col items-end">
+              <p className="chat_item inline-block py-1 max-w-[285px] lg:max-w-[470px] w-full px-[30px] font-medium text-white text-lg">
                 to Thailand. What is the best route and <br /> what visas do I
                 need? Is it through india <br /> or no?
               </p>
-              <span className="time block text-base text-[#B5B5B5] ml-8 my-2">
+              <span className="time block text-base text-[#B5B5B5] ml-8 my-2 mr-8 md:mr-0">
                 08:55
               </span>
             </div>
