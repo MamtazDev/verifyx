@@ -2,7 +2,7 @@ import ADIcon from "../assets/add-icon.svg";
 import DIcon from "../assets/delete-icon.svg";
 import EIcon from "../assets/edit-icon.svg";
 import LArrow from "../assets/left-arrow.svg";
-import sLogo from "../assets/small-logo.svg";
+import sLogo from "../assets/logo-big.png";
 import MIcon from "../assets/text-icon.svg";
 import THIcon from "../assets/thai.png";
 import QAIcon from "../assets/qatar.png";
@@ -169,6 +169,7 @@ const Chat = () => {
             <div className="brand_nav">
               <img src={sLogo} alt="icon" />
             </div>
+            <div></div>
           </div>
           <div className="chat_body">
             <div className="chat_his my-3 text-center">
@@ -187,12 +188,12 @@ const Chat = () => {
               </span>
             </div>
 
-            <div className="chat_two flex justify-end mb-10">
-              <div className="chat_item inline-block py-1 max-w-[665px] w-full px-[30px] font-medium text-black text-lg">
+            <div className="chat_two flex justify-end mb-5">
+              <div className="chat_item inline-block p-5 max-w-[665px] w-full font-medium text-black text-lg">
                 Actually the best route is a direct flight from Frankfurt to
                 Thailand. <br /> <br /> It is the fastest and the cheapest
                 option that won’t require any extra transit visas.
-                <span className="pb-5 block text-[#0AB6FF] cursor-pointer">
+                <span className="block text-[#0AB6FF] cursor-pointer">
                   {" "}
                   read more....
                 </span>
@@ -200,17 +201,17 @@ const Chat = () => {
             </div>
 
             <div className="chat_two flex flex-col items-end mb-[80px] relative">
-              <div className="chat_item inline-block py-1 max-w-[560px] w-full px-[30px] font-medium text-black text-lg">
+              <div className="chat_item inline-block p-5 max-w-[560px] w-full  font-medium text-black text-lg">
                 Here are some flight companies offering that:
-                <p className="text-lg font-medium text-[#0AB6FF] flex items-center gap-3 mb-3">
+                <div className="mt-1 text-lg font-medium text-[#0AB6FF] flex items-center gap-3 mb-3">
                   <img src={THIcon} alt="icon" />
                   <Link to={"#"}>Chaeck for flights</Link>
-                </p>
-                <p className="text-lg font-medium text-[#0AB6FF] flex items-center gap-3 mb-3">
+                </div>
+                <div className="text-lg font-medium text-[#0AB6FF] flex items-center gap-3 mb-3">
                   <img src={QAIcon} alt="icon" />
                   <Link to={"#"}>Chaeck for flights</Link>
-                </p>
-                <span className="pb-5 block text-[#0AB6FF] cursor-pointer">
+                </div>
+                <span className="block text-[#0AB6FF] cursor-pointer">
                   show more....
                 </span>
               </div>
@@ -222,7 +223,7 @@ const Chat = () => {
             </div>
 
             <div className="feedback text-center border-t border-t-black mb-5">
-              <p className="text-[22px] font-normal text-[#505050] pt-4 mb-4">
+              <p className="text-[22px] font-normal text-[#505050] pt-2 mb-4">
                 Is the given answer accurate?
               </p>
 
@@ -246,14 +247,15 @@ const Chat = () => {
                 type="text"
                 placeholder="Ask anything..."
               />
+              <div className="flex items-center gap-2 absolute top-[50%] translate-y-[-50%] right-[12px]">
+                <button>
+                  <img src={SENDIcon} alt="icon" />
+                </button>
 
-              <button className="absolute top-[50%] translate-y-[-50%] right-[12px]">
-                <img src={SENDIcon} alt="icon" />
-              </button>
-
-              <button className="absolute top-[50%] translate-y-[-50%] right-[70px]">
-                <img src={FILEIcon} alt="icon" />
-              </button>
+                <button>
+                  <img src={FILEIcon} alt="icon" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
