@@ -38,7 +38,7 @@ const Chat = () => {
           className={`${
             display ? "fixed " : "hidden lg:block lg:static"
           }" col-span-12 lg:col-span-3  z-50 "`}>
-          <div className="left_side h-auto lg:h-screen">
+          <div className="left_side h-screen">
             <div className="top_bar flex items-center justify-between mb-10">
               <button onClick={() => setDisplay(false)}>
                 <img src={LArrow} alt="icon" />
@@ -141,7 +141,7 @@ const Chat = () => {
                 ))}
               </div>
 
-              <div className="load_more text-center border-t border-t-[#D9D9D9] pt-2 mb-[35px]">
+              <div className="load_more text-center border-t border-t-[#D9D9D9] pt-2 mb-[50px]">
                 <button className="text-lg font-medium text-center text-[#ffffffc9]">
                   Load more....
                 </button>
@@ -174,7 +174,7 @@ const Chat = () => {
               </p>
             </div>
 
-            <div className="chat_minus_one">
+            <div className="chat_minus_one md:hidden">
               <p className="chat_item inline-block py-1 max-w-[248px] w-full px-[30px] font-medium text-white text-lg bg-white">
                 Hello, how may I help <br /> You today?
               </p>
@@ -183,10 +183,11 @@ const Chat = () => {
               </span>
             </div>
 
-            <div className="chat_one flex lg:flex-none flex-col items-end">
+            <div className="chat_one flex lg:flex-none flex-col items-end md:hidden">
               <p className="chat_item inline-block py-4 max-w-[285px] lg:max-w-[470px] w-full px-[30px] font-medium text-white text-lg">
-                I’ve seen news on a <br /> Project called Solidus Ai <br /> getting a 100
-                million <br /> dollar deal with <br /> Microsoft, is that true? to Thailand.
+                I’ve seen news on a <br /> Project called Solidus Ai <br />{" "}
+                getting a 100 million <br /> dollar deal with <br /> Microsoft,
+                is that true? to Thailand.
               </p>
               <span className="time block text-base text-[#B5B5B5] ml-8 my-2 mr-8 md:mr-0">
                 08:55
@@ -264,11 +265,10 @@ const Chat = () => {
               />
               <div className="flex items-center gap-2 absolute top-[50%] translate-y-[-50%] right-[12px]">
                 <button>
-                  <img src={SENDIcon} alt="icon" />
-                </button>
-
-                <button>
                   <img src={FILEIcon} alt="icon" />
+                </button>
+                <button>
+                  <img src={SENDIcon} alt="icon" />
                 </button>
               </div>
             </div>
