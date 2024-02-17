@@ -52,7 +52,7 @@ const Chat = () => {
               </button>
             </div>
             {showLogout && (
-              <button className="fixed right-0 top-16">
+              <button className="fixed right-0 top-[85px]">
                 <img src={logout} alt="" />
               </button>
             )}
